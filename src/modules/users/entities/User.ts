@@ -24,7 +24,7 @@ export class User {
   password: string;
 
   @OneToMany(() => Statement, statement => statement.user)
-  statement: Statement[];
+  statement: Account[];
 
   @CreateDateColumn()
   created_at: Date;
@@ -33,7 +33,7 @@ export class User {
   updated_at: Date;
 
   constructor() {
-    if(!this.id) {
+    if (!this.id) {
       this.id = uuid();
     }
   }
